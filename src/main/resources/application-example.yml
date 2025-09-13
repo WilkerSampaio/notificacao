@@ -2,8 +2,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username:
-    password:
+    username: ${EMAIL}
+    password: ${SENHA}
     protocol: smtp
     properties:
       mail:
@@ -20,7 +20,7 @@ spring:
 
 envio:
   email:
-    remetente:
+    remetente: ${EMAIL}
     nomeRemetente: 'Agendador de Tarefa'
 
 server:
