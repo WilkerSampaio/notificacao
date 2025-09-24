@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Notificação de Tarefa</title>
+</head>
+<body style="margin:0; padding:0; font-family: Arial, sans-serif; background-color:#f4f4f4;">
+<table align="center" width="100%" cellpadding="0" cellspacing="0" style="padding: 20px 0;">
+    <tr>
+        <td align="center">
+            <table width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff; border-radius:8px; border:1px solid #ddd; padding: 30px;">
+                <tr>
+                    <td align="center" style="padding-bottom: 20px;">
+                        <h1 style="color:#4a00e0; font-size:24px;">🚀 Notificação de Tarefa</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size:16px; color:#333333;">
+                        <p>
+                            Aviso: Sua tarefa
+                            <strong style="color:#e63946;" th:text="${nomeTarefa}">Nome da Tarefa</strong>
+                            está agendada para hoje às
+                            <strong style="color:#e63946;" th:text="${dataEvento}">Horário</strong>.
+                        </p>
+                        <p>Confira sua descrição:</p>
+                        <p style="color:#555;" th:text="${descricao}">Descrição da Tarefa</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-top: 30px; color:#777; font-size:14px;">
+                        ✨ Obrigado por usar nosso sistema de tarefas. Continue brilhando! ✨
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
