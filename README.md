@@ -28,9 +28,9 @@ O cron que controla esse disparo roda a cada **30 segundos** e está no **BFF**,
 
 ## 📋 Endpoint(s) Expostos
 
-| Método | Rota | Descrição | Autenticação |
-|---|---|---|---|
-| POST `/notificacoes/email` | Dispara notificação por e-mail para usuário/tarefa | ❌ requer token |
+| Método  | Rota                  | Descrição                                  | Autenticação |
+|---------|-----------------------|--------------------------------------------| -------------|
+| POST    | `/notificacoes/email` | Dispara notificação por e-mail para usuário|  ❌          |
 
 ---
 
