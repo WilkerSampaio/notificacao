@@ -1,6 +1,6 @@
 package com.wilker.notificacao.service;
 
-import com.wilker.notificacao.infrastructure.dto.TarefasDTO;
+import com.wilker.notificacao.infrastructure.dto.out.TarefasDTORequest;
 import com.wilker.notificacao.infrastructure.exception.EmailException;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.InternetAddress;
@@ -37,7 +37,7 @@ public class EmailService {
     private String nomeRemetente;
 
     // Metodo que envia o e-mail de notificação baseado nos dados da tarefa
-    public void enviarEmail(TarefasDTO tarefaDTO){
+    public void enviarEmail(TarefasDTORequest tarefasDTORequest){
         try{
             // Cria um objeto de mensagem MIME (suporta HTML, anexos, etc.)
             MimeMessage mensagem = javaMailSender.createMimeMessage();
@@ -52,7 +52,7 @@ public class EmailService {
             mimeMessageHelper.setFrom(new InternetAddress(remetente, nomeRemetente));
 
             // Define destinatário (pega do DTO)
-            mimeMessageHelper.setTo(InternetAddress.parse(tarefaDTO.getEmailUsuario()));
+            mimeMessageHelper.setTo(InternetAddress.parse(tarefasDTORequest.getEmailUsuario()));
 
             // Define o assunto do e-mail
             mimeMessageHelper.setSubject("Notificação de Tarefa");
@@ -63,9 +63,9 @@ public class EmailService {
                     .withLocale(new Locale("pt", "BR"));
 
             Context context = new Context();
-            context.setVariable("nomeTarefa", tarefaDTO.getNomeTarefa());
-            context.setVariable("dataEvento", tarefaDTO.getDataEvento().format(formatter));
-            context.setVariable("descricao", tarefaDTO.getDescricao());
+            context.setVariable("nomeTarefa", tarefasDTORequest.getNomeTarefa());
+            context.setVariable("dataEvento", tarefasDTORequest.getDataEvento().format(formatter));
+            context.setVariable("descricao", tarefasDTORequest.getDescricao());
 
             // Processa o template "notificacao.html" substituindo as variáveis acima
             String template = templateEngine.process("notificacao", context);
