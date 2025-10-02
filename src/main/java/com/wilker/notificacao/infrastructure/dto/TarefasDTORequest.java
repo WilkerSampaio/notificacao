@@ -1,4 +1,4 @@
-package com.wilker.notificacao.infrastructure.dto.out;
+package com.wilker.notificacao.infrastructure.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
