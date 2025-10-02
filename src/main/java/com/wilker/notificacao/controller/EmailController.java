@@ -1,7 +1,7 @@
 package com.wilker.notificacao.controller;
 
 import com.wilker.notificacao.infrastructure.annotations.ApiNotificacaoResponses;
-import com.wilker.notificacao.infrastructure.dto.out.TarefasDTORequest;
+import com.wilker.notificacao.infrastructure.dto.TarefasDTORequest;
 import com.wilker.notificacao.service.EmailService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

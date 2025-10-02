@@ -1,6 +1,6 @@
 package com.wilker.notificacao.service;
 
-import com.wilker.notificacao.infrastructure.dto.out.TarefasDTORequest;
+import com.wilker.notificacao.infrastructure.dto.TarefasDTORequest;
 import com.wilker.notificacao.infrastructure.exception.EmailException;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.InternetAddress;
